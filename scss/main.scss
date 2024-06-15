@@ -1,0 +1,213 @@
+@import "variables";
+@import "mixins";
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color-background;
+    color: $color-text;
+}
+
+header {
+    background-color: $color-header;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    @include flex-center;
+    justify-content: space-between; 
+}
+
+.logo {
+    width: 40%;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    padding: 60px;
+    margin-right: 80px;
+    gap: 30px;
+    font-size: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+header nav ul li a:hover {
+    color: $color-link-hover; 
+    font-weight: bold;
+}
+
+nav ul .pagina {
+    background-color: #615D5D;
+}
+
+header img {
+    width: 50%;
+}
+
+main {
+    @include flex-center;
+    margin: 20px 50px;
+    gap: 30px;
+}
+
+main .textos {
+    text-align: center;
+}
+
+main .textos h1 span {
+    display: block;
+}
+
+.boton .btn {
+    @include button-styles;
+}
+
+section {
+    background-color: $color-section-background;
+    color: $color-header;
+    @include flex-center;
+    padding: 20px;
+    margin-top: 30px;
+    gap: 50px;
+
+    div {
+        text-align: center;
+        gap: 80px;
+        margin: 0px 40px 0px 10px;
+    }
+    
+    .redes {
+    
+        a.social-link {
+            color: $color-text; /* Color del texto de los enlaces */
+        }
+    }
+    
+
+}
+
+
+
+.carrusel {
+    @include flex-center;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    background-color: $color-header;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    background-color: $color-product-background;
+    border: 1px solid $color-product-border;
+    border-radius: 5px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+.Mapa iframe {
+    position: center;
+    top: 50px;
+    left: 3px;
+    width: 50%;
+    height: 50%;
+    border: 0;
+}
+
+
+.noticia1 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: $color-news-background;
+    border-radius: 5px;
+    box-shadow: 0 0 10px $color-news-border; 
+}
+
+
+.imgNoticia {
+    @include flex-center;
+}
+
+.contactanos {
+    width: 80%;
+    margin: 0 auto; 
+  }
+  
+  .contacto {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .form-control {
+    width: 120%; 
+    margin-left: 80px;
+  }
+  
+
+
+footer {
+    text-align: center;
+    color: $color-text;
+    margin: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+
+        nav ul {
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            gap: 10px;
+        }
+
+        img {
+            width: 70%;
+            margin-bottom: 10px;
+        }
+    }
+
+    main {
+        flex-direction: column;
+        margin: 0 20px;
+
+        .imagen img {
+            width: 100%;
+        }
+    }
+
+    section {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .Mapa iframe {
+        width: 100%;
+        height: 300px;
+    }
+}
